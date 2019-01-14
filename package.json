@@ -1,14 +1,14 @@
 {
   "name": "bigbosssalute",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "In memory of a patriot who saved the world.",
+  "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "mode bot.js"
   },
-  "author": "",
+  "author": "Alexa",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "11.1.0"
   }
 }
