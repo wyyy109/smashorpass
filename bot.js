@@ -6,6 +6,11 @@ bot.on('message', function(message){
     {
         message.channel.send({files: ["https://i.imgur.com/jiaoi7A.gif"]});
     }
+    
+    if(message.content == 'o7')
+    {
+        message.channel.send({files: ["https://i.imgur.com/jiaoi7A.gif"]});
+    }
 });
 
 bot.login(process.env.BOT_TOKEN);
