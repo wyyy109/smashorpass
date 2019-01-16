@@ -15,4 +15,11 @@ bot.on('message', function(message){
     }
 });
 
+bot.on('message', function(message){
+    if(message.content == '!balloon')
+    {
+        message.channel.send({files: ["https://i.imgur.com/509yXPB.gif"]});
+    }
+});
+
 bot.login(process.env.BOT_TOKEN);
