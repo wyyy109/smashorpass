@@ -18,7 +18,7 @@ bot.on('message', function(message){
 bot.on('message', function(message){
     if(message.content == '!balloon')
     {
-        message.channel.send({files: ["https://i.imgur.com/8AsNF6y.gif]};
+        message.channel.send({files: ["https://i.imgur.com/8AsNF6y.gif"]};
     }
 });
 
