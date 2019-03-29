@@ -15,4 +15,18 @@ bot.on('message', function(message){
     }
 });
 
+bot.on('message', function(message){
+    if(message.content == 'f')
+    {
+        message.channel.send({files: ["https://i.imgur.com/jiaoi7A.gif"]});
+    }
+});
+
+bot.on('message', function(message){
+    if(message.content == 'F')
+    {
+        message.channel.send({files: ["https://i.imgur.com/jiaoi7A.gif"]});
+    }
+});
+
 bot.login(process.env.BOT_TOKEN);
