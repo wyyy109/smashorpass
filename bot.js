@@ -29,4 +29,18 @@ bot.on('message', function(message){
     }
 });
 
+bot.on('message', function(message){
+    if(message.content == '!gay')
+    {
+        message.channel.send({files: ["https://i.imgur.com/MOLAAtG.png"]});
+    }
+});
+
+bot.on('message', function(message){
+    if(message.content == '!ocelot')
+    {
+        message.channel.send({files: ["https://i.imgur.com/W8x06md.gif"]});
+    }
+});
+
 bot.login(process.env.BOT_TOKEN);
