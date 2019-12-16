@@ -13,6 +13,10 @@ bot.on('message', function(message){
     {
         message.channel.send({files: ["https://i.imgur.com/jiaoi7A.gif"]});
     }
+    else if(message.content == 'O7')
+    {
+        message.channel.send({files: ["https://i.imgur.com/jiaoi7A.gif"]});
+    }
     else if(message.content == 'f')
     {
         message.channel.send({files: ["https://i.imgur.com/jiaoi7A.gif"]});
