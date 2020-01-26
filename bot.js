@@ -1,3 +1,6 @@
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+
 bot.on('message', function(message){
     if(message.content.toLowerCase().startsWith('smash or pass:'))
     {
@@ -14,3 +17,5 @@ bot.on('message', function(message){
                 })
     }
 });
+
+bot.login(process.env.BOT_TOKEN);
