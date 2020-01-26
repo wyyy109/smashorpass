@@ -9,7 +9,6 @@ bot.on('message', function(message){
             .then(async function (message){
                 message.react("❤️")
                 await message.react("💀")
-            )
     }
 });
 
