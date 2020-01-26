@@ -1,7 +1,7 @@
 {
-  "name": "bigbosssalute",
+  "name": "smashorpass",
   "version": "1.0.0",
-  "description": "In memory of a patriot who saved the world.",
+  "description": "Smash or pass? Only you can decide.",
   "main": "bot.js",
   "scripts": {
     "start": "mode bot.js"
