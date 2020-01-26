@@ -5,8 +5,12 @@ bot.on('message', function(message){
     if(message.content.toLowerCase().startsWith('smash or pass:'))
     {
         message.channel.send(
-            "The vote begins! /n**Name**: smash or pass? Select :heart: to smash, :skull: to pass."
-            ).react(❤️).react(💀);
+            "The vote begins! /n**Name**: smash or pass? Select :heart: to smash, :skull: to pass.")
+            .then(function (message){
+                message.react(❤️)
+                message.react(💀)
+            }
+            )
     }
 });
 
