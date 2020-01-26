@@ -6,10 +6,9 @@ bot.on('message', function(message){
     {
         message.channel.send(
             "Vote initiated! \n**Name**: smash or pass? Select :heart: to smash, :skull: to pass.")
-            .then(function (message){
+            .then(async function (message){
                 message.react("❤️")
-                message.react("💀")
-            }
+                await message.react("💀")
             )
     }
 });
