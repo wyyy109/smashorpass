@@ -16,6 +16,10 @@ bot.on('message', message => {
                     }
                 })
 		
+	    	const filter = (reaction, user) => {
+			return ['❤️', '💀'].includes(reaction.emoji.name) && user.id === message.author.id;
+		};
+	    
 		var heartCount = 0;
 		var skullCount = 0;
 		
