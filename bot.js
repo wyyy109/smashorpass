@@ -19,12 +19,10 @@ bot.on('message', function(message){
                 catch (error) {
                     console.error('One of the emojis failed to react.');
                     }
-                });
-                message.awaitReactions(filter, {time: 7200})
+                })
+                .then(awaitReactions(filter, {time: 5400})
                 .then(collected => {
-                    message.channel.send(collected.length);
                     for (var i = 0; i < collected.length; i++){
-                        const emojiVote = collected.first();
                         if (collected[i].emoji.name === "❤️")
                         {heartCount++;}
                         else if (collected[i].emoji.name === "💀")
