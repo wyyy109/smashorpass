@@ -6,7 +6,15 @@ bot.on('message', function(message){
     var skullCount = 0;
 
     if(message.content.toLowerCase().startsWith('smash or pass:')) {
-      var toSmash = message.content.slice(14).trim();
+      var toSmashTemp = message.content.slice(13);
+      var toSmash;
+      if (toSmashTemp.charAt(0) === ":"){
+        toSmash = toSmashTemp.slice(1).trim();
+      }
+      else {
+       toSmash = toSmashTemp.trim();
+      }
+
       if (Boolean(toSmash)){
       message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
       .then(msg => {
@@ -68,6 +76,5 @@ bot.on('message', function(message){
       
     }
 })
-
 
 bot.login(process.env.BOT_TOKEN);
