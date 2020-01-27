@@ -7,6 +7,8 @@ const filter = (reaction) => {
 };
 
 bot.on('message', function(message){
+    var heartCount = 0;
+    var skullCount = 0;
     if(message.content.toLowerCase().startsWith('smash or pass:'))
     {
         message.channel.send(
@@ -22,8 +24,6 @@ bot.on('message', function(message){
                 })
                 .then(message.awaitReactions(filter, {time: 5400})
                 .then(collected => {
-                    var heartCount = 0;
-                    var skullCount = 0;
                     for (var i = 0; i < collected.length; i++){
                         if (collected[i] === "❤️")
                         {heartCount++;}
