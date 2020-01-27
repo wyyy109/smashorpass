@@ -8,7 +8,7 @@ bot.on('message', function(message){
     if(message.content.toLowerCase().startsWith('smash or pass:')) {
       var toSmash = message.content.slice(14).trim();
       if (Boolean(toSmash)){
-      message.channel.send(`Smash or pass: **${toSmash}**? \nSelect :heart: to smash, :skull: to pass.`)
+      message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
           const filter = (reaction, user) => {
@@ -68,7 +68,6 @@ bot.on('message', function(message){
       
     }
 })
-
 
 
 bot.login(process.env.BOT_TOKEN);
