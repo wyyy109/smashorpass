@@ -45,7 +45,7 @@ bot.on('message', function(message){
         })
       }
       else {
-      message.channel.send("Vote now: mash or pass? \nSelect :heart: to smash, :skull: to pass.")
+      message.channel.send("Will you smash or pass? \nSelect :heart: to smash, :skull: to pass.")
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
           const filter = (reaction, user) => {
