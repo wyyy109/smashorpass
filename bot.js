@@ -14,8 +14,6 @@ bot.on('message', function(message){
       else {
        toSmash = toSmashTemp.trim();
       }
-
-      if (toSmash.length > 0){
       message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
@@ -42,38 +40,7 @@ bot.on('message', function(message){
                 message.channel.send("Inconclusive.");
               }
             });
-        })
-      }
-      else {
-      message.channel.send("Smash or pass? \nSelect :heart: to smash, :skull: to pass.")
-      .then(msg => {
-        msg.react(`❤️`).then(() => msg.react('💀'));
-          const filter = (reaction, user) => {
-            return [`❤️`, '💀'].includes(reaction.emoji.name);
-            };
-
-            const collector2 = msg.createReactionCollector(filter, {time: 10000});
-            collector2.on('collect', (reaction, reactionCollector) => {
-              if (reaction.emoji.name === `❤️`) {
-                heartCount+=1
-              } else if (reaction.emoji.name === `💀`) {
-                skullCount+=1
-                }
-            });
-            collector2.on('end', (reaction, reactionCollector) => {
-              if (heartCount > skullCount){
-                message.channel.send("SMASH");
-              }
-              else if (heartCount < skullCount){
-                message.channel.send("Pass...");
-              }
-              else {
-                message.channel.send("Inconclusive.");
-              }
-            });
-        })
-      }
-      
+        })     
     }
 })
 
