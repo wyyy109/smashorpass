@@ -7,7 +7,7 @@ bot.on('message', function(message){
 
     if(message.content.toLowerCase().startsWith('smash or pass:')) {
       var toSmash = message.content.slice(14).trim();
-      message.channel.send(`**{$toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`).then(msg => {
+      message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`).then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
           const filter = (reaction, user) => {
             return [`❤️`, '💀'].includes(reaction.emoji.name);
