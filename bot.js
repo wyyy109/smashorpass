@@ -11,9 +11,7 @@ bot.on('message', function(message){
       if (toSmashTemp.charAt(0) === ":"){
         toSmash = toSmashTemp.slice(1).trim();
       }
-      else {
-       toSmash = toSmashTemp.trim();
-      }
+      toSmash = toSmashTemp.trim();
 
       if (toSmash !== ""){
       message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
