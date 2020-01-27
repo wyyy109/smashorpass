@@ -20,7 +20,7 @@ bot.on('message', function(message){
                     console.error('One of the emojis failed to react.');
                     }
                 })
-                .then(message.awaitReactions(filter, {time: 1800})
+                .then(message.awaitReactions(filter, {time: 5000})
                 .then(collected => {
                     var heartCount = 0;
                     var skullCount = 0;
