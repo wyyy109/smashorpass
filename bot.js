@@ -20,7 +20,7 @@ bot.on('message', function(message){
                     console.error('One of the emojis failed to react.');
                     }
                 })
-                .then(awaitReactions(filter, {time: 5400})
+                .then(this.awaitReactions(filter, {time: 5400})
                 .then(collected => {
                     for (var i = 0; i < collected.length; i++){
                         if (collected[i].emoji.name === "❤️")
