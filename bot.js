@@ -22,10 +22,11 @@ bot.on('message', function(message){
                 })
                 .then(message.awaitReactions(filter, {time: 5400})
                 .then(collected => {
-                    for (var i = 0; i < collected.length; i++){
-                        if (collected[i].emoji.name === "❤️")
+                    const emojiList = collected;
+                    for (var i = 0; i < emojiList.length; i++){
+                        if (emojiList[i].emoji.name === "❤️")
                         {heartCount++;}
-                        else if (collected[i].emoji.name === "💀")
+                        else if (emojiList[i].emoji.name === "💀")
                         {skullCount++;}
                     };
                 
