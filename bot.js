@@ -7,7 +7,7 @@ bot.on('message', function(message){
 
     if(message.content.toLowerCase().startsWith('smash or pass')) {
       var toSmashTemp = message.content.slice(13);
-      var toSmash = "";
+      var toSmash;
       if (toSmashTemp.charAt(0) === ":"){
         toSmash = toSmashTemp.slice(1).trim();
       }
@@ -44,7 +44,7 @@ bot.on('message', function(message){
             });
         })
       }
-      if (toSmash.length === 0) {
+      else {
       message.channel.send("Smash or pass? \nSelect :heart: to smash, :skull: to pass.")
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
