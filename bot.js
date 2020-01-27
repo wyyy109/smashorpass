@@ -25,9 +25,9 @@ bot.on('message', function(message){
                     var heartCount = 0;
                     var skullCount = 0;
                     for (var i = 0; i < collected.length; i++){
-                        if (collected[i].emoji.name === "❤️")
+                        if (collected[i] === "❤️")
                         {heartCount++;}
-                        else if (collected[i].emoji.name === "💀")
+                        else if (collected[i] === "💀")
                         {skullCount++;}
                     };
                 
