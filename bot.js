@@ -44,7 +44,7 @@ bot.on('message', function(message){
             });
         })
       }
-      else {
+      else if (toSmash === "") {
       message.channel.send("Smash or pass? \nSelect :heart: to smash, :skull: to pass.")
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
