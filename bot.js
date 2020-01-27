@@ -30,13 +30,13 @@ bot.on('message', function(message){
                     };
                 
                     if (heartCount > skullCount){
-                        message.channel.send("SMASH" + "" + heartCount + "" + skullCount);
+                        message.channel.send("SMASH" + " " + heartCount + " " + skullCount);
                     }
                     else if (heartCount < skullCount){
-                        message.channel.send("PASS"+ "" + heartCount + "" + skullCount);
+                        message.channel.send("PASS"+ " " + heartCount + " " + skullCount);
                     }
                     else {
-                        message.channel.send("TIE"+ "" + heartCount + "" + skullCount);
+                        message.channel.send("TIE"+ " " + heartCount + " " + skullCount);
                     }
                     
                 })
