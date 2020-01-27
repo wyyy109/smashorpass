@@ -6,7 +6,7 @@ bot.on('message', message => {
     {
         message.channel.send(
             "The vote begins! \n**Name**: smash or pass? Select :heart: to smash, :skull: to pass.")
-            .then((message) => message.react('❤️'))
+            message.react('❤️'))
             .then((message) => message.react('💀'));
             
             const filter = (reaction, user) => {
