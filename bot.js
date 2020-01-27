@@ -5,8 +5,8 @@ bot.on('message', function(message){
     var heartCount = 0;
     var skullCount = 0;
 
-    if(message.content.toLowerCase().startsWith('!vote')) {
-        message.channel.send('The vote begins! Do we love it or hate it?').then(msg => {
+    if(message.content.toLowerCase().startsWith('smash or pass:')) {
+        message.channel.send('Smash or pass? \nSelect :heart: to smash, :skull: to pass.').then(msg => {
             msg.react(`❤️`).then(() => msg.react('💀'));
             const filter = (reaction, user) => {
                 return [`❤️`, '💀'].includes(reaction.emoji.name);
@@ -22,13 +22,13 @@ bot.on('message', function(message){
             });
             collector.on('end', (reaction, reactionCollector) => {
                    if (heartCount > skullCount){
-                        message.channel.send("We love it!");
+                        message.channel.send("SMASH");
                     }
                     else if (heartCount < skullCount){
-                        message.channel.send("We hate it.");
+                        message.channel.send("Pass...");
                     }
                     else {
-                        message.channel.send("We're neutral about it.");
+                        message.channel.send("Inconclusive.");
                     }
             });
 
