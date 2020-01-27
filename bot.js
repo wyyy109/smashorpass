@@ -1,13 +1,10 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
-
 bot.on('message', message => {
     if(message.content.toLowerCase().startsWith('smash or pass:'))
     {
         message.channel.send(
             "The vote begins! \n**Name**: smash or pass? Select :heart: to smash, :skull: to pass.")
-            .then(() => message.react('❤️'))
-            .then(() => message.react('💀'));
+            .then((message) => message.react('❤️'))
+            .then((message) => message.react('💀'));
             
             const filter = (reaction, user) => {
 			return ['❤️', '💀'].includes(reaction.emoji.name) && user.id === message.author.id;
@@ -35,7 +32,7 @@ bot.on('message', message => {
             }
 		}
 		);
-    }  
+    }
+    
+    
 });
-
-bot.login(process.env.BOT_TOKEN);
