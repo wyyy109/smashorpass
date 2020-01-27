@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const filter = (reaction, user) => {
-    return ["❤️","💀"].includes(reaction.emoji.name) && user.id === message.author.id;
+const filter = (reaction) => {
+    return ["❤️","💀"].includes(reaction.emoji.name) 
     
 };
 
@@ -20,7 +20,7 @@ bot.on('message', function(message){
                     console.error('One of the emojis failed to react.');
                     }
                 })
-                .then(message.awaitReactions(filter, {time: 5000})
+                .then(message.awaitReactions(filter, {time: 1800})
                 .then(collected => {
                     var heartCount = 0;
                     var skullCount = 0;
