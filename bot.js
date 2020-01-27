@@ -25,22 +25,9 @@ bot.on('message', message => {
 		
 		message.awaitReactions(filter, {time: 5400})
 		.then(collected => {
-		    for (var i = 0; i < collected.length; i++){
-			var currentEmoji = collected[i];
-                        if (currentEmoji.emoji.name === "❤️")
-                        {heartCount++;}
-                        else if (currentEmoji.emoji.name === "💀")
-                        {skullCount++;}
-                    }
-            if (heartCount > skullCount){
-                message.channel.send("SMASH" + " " + heartCount + " " + skullCount);
-            }
-            else if (heartCount < skullCount){
-                message.channel.send("PASS"+ " " + heartCount + " " + skullCount);
-            }
-            else {
-                message.channel.send("TIE"+ " " + heartCount + " " + skullCount);
-            }
+		    const reaction = collected.first();
+		    message.channel.send(reaction.emoji.name);
+            
 		}
 		);
     }
