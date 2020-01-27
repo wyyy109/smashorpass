@@ -5,7 +5,7 @@ bot.on('message', function(message){
     var heartCount = 0;
     var skullCount = 0;
 
-    if(message.content.toLowerCase().startsWith('smash or pass:')) {
+    if(message.content.toLowerCase().startsWith('smash or pass')) {
       var toSmashTemp = message.content.slice(13);
       var toSmash;
       if (toSmashTemp.charAt(0) === ":"){
