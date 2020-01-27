@@ -6,32 +6,32 @@ bot.on('message', function(message){
     var skullCount = 0;
 
     if(message.content.toLowerCase().startsWith('smash or pass:')) {
-        message.channel.send('Smash or pass? \nSelect :heart: to smash, :skull: to pass.').then(msg => {
-            msg.react(`❤️`).then(() => msg.react('💀'));
-            const filter = (reaction, user) => {
-                return [`❤️`, '💀'].includes(reaction.emoji.name);
+      var toSmash = message.content.slice(14).trim();
+      message.channel.send(`**{$toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`).then(msg => {
+        msg.react(`❤️`).then(() => msg.react('💀'));
+          const filter = (reaction, user) => {
+            return [`❤️`, '💀'].includes(reaction.emoji.name);
             };
 
             const collector = msg.createReactionCollector(filter, {time: 10000});
             collector.on('collect', (reaction, reactionCollector) => {
-                if (reaction.emoji.name === `❤️`) {
-                    heartCount+=1
-                } else if (reaction.emoji.name === `💀`) {
-                    skullCount+=1
+              if (reaction.emoji.name === `❤️`) {
+                heartCount+=1
+              } else if (reaction.emoji.name === `💀`) {
+                skullCount+=1
                 }
             });
             collector.on('end', (reaction, reactionCollector) => {
-                   if (heartCount > skullCount){
-                        message.channel.send("SMASH");
-                    }
-                    else if (heartCount < skullCount){
-                        message.channel.send("Pass...");
-                    }
-                    else {
-                        message.channel.send("Inconclusive.");
-                    }
+              if (heartCount > skullCount){
+                message.channel.send("SMASH");
+              }
+              else if (heartCount < skullCount){
+                message.channel.send("Pass...");
+              }
+              else {
+                message.channel.send("Inconclusive.");
+              }
             });
-
         })
     }
 })
