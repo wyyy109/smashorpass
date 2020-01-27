@@ -5,7 +5,7 @@ bot.on('message', function(message){
     var heartCount = 0;
     var skullCount = 0;
 
-    if(message.content.toLowerCase().matches('smash or pass'))
+    if(message.content.toLowerCase().match('smash or pass'))
     {
       message.channel.send("Smash or pass? \nSelect :heart: to smash, :skull: to pass.")
       .then(msg => {
