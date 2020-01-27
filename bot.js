@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 const filter = (reaction, user) => {
-    return ["❤️","💀"].includes(reaction.emoji.name) && user.id === message.author.id; };
+    return ["❤️","💀"].includes(reaction.emoji.name) && user.id === message.author.id };
 
 bot.on('message', function(message){
     if(message.content.toLowerCase().startsWith('smash or pass:'))
@@ -30,13 +30,13 @@ bot.on('message', function(message){
                     };
                 
                     if (heartCount > skullCount){
-                        message.channel.send("SMASH");
+                        message.channel.send("SMASH" + "" + heartCount + "" + skullCount);
                     }
                     else if (heartCount < skullCount){
-                        message.channel.send("PASS");
+                        message.channel.send("PASS"+ "" + heartCount + "" + skullCount);
                     }
                     else {
-                        message.channel.send("TIE");
+                        message.channel.send("TIE"+ "" + heartCount + "" + skullCount);
                     }
                     
                 })
