@@ -20,7 +20,7 @@ bot.on('message', function(message){
                     console.error('One of the emojis failed to react.');
                     }
                 })
-                .then(message.awaitReactions(filter, {time: 5400})
+                .then(message.awaitReactions(filter, {time: 7200})
                 .then(collected => {
                     message.channel.send(collected.length);
                     for (var i = 0; i < collected.length; i++){
