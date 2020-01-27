@@ -7,10 +7,10 @@ const filter = (reaction) => {
 };
 
 bot.on('message', function(message){
-    var heartCount = 0;
-    var skullCount = 0;
     if(message.content.toLowerCase().startsWith('smash or pass:'))
     {
+    var heartCount = 0;
+    var skullCount = 0;
         message.channel.send(
             "The vote begins! \n**Name**: smash or pass? Select :heart: to smash, :skull: to pass.")
                 .then(async function (message){
