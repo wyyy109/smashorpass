@@ -1,10 +1,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const filter = (reaction) => {
-    return ["❤️","💀"].includes(reaction.emoji.name) 
-    
-};
+const filter = (reaction, user) => {
+    return ["❤️","💀"].includes(reaction.emoji.name) && user.id === message.author.id; };
 
 bot.on('message', function(message){
     if(message.content.toLowerCase().startsWith('smash or pass:'))
