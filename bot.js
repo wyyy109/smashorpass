@@ -1,3 +1,6 @@
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+
 bot.on('message', function(message){
     var heartCount = 0;
     var skullCount = 0;
@@ -38,3 +41,5 @@ bot.on('message', function(message){
         })
     }
 })
+
+bot.login(process.env.BOT_TOKEN);
