@@ -7,7 +7,7 @@ bot.on('message', function(message){
 
     if(message.content.toLowerCase().startsWith('smash or pass')) {
       var toSmashTemp = message.content.slice(13);
-      var toSmash;
+      var toSmash = "";
       if (toSmashTemp.charAt(0) === ":"){
         toSmash = toSmashTemp.slice(1).trim();
       }
