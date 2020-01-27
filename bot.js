@@ -12,7 +12,7 @@ bot.on('message', function(message){
         toSmash = toSmashTemp.slice(1).trim();
       }
       else {
-      toSmash = toSmashTemp.trim();
+       toSmash = toSmashTemp.trim();
       }
 
       if (toSmash !== ""){
@@ -45,7 +45,7 @@ bot.on('message', function(message){
         })
       }
       else {
-      message.channel.send(`Smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
+      message.channel.send("Smash or pass? \nSelect :heart: to smash, :skull: to pass.")
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
           const filter = (reaction, user) => {
@@ -72,6 +72,7 @@ bot.on('message', function(message){
               }
             });
         })
+      }
       
     }
 })
