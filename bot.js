@@ -7,11 +7,22 @@ bot.on('message', function(message){
 
     if(message.content.toLowerCase().startsWith('smash or pass:')) {
         var toSmash = message.content.slice(14).trim();
-        message.channel.send(`The vote begins! \n**${toSmash}**: smash or pass? Select :heart: to smash, :skull: to pass.`).then(msg => {
+        if toSmash === ""
+        {
+            message.channel.send(`The vote begins! \n**Smash or pass?** Select :heart: to smash, :skull: to pass.`).then(msg => {
             msg.react(`❤️`).then(() => msg.react('💀'));
             const filter = (reaction, user) => {
                 return [`❤️`, '💀'].includes(reaction.emoji.name);
             };
+        }
+        else
+        {
+            message.channel.send(`The vote begins! \n**${toSmash}**: smash or pass? Select :heart: to smash, :skull: to pass.`).then(msg => {
+            msg.react(`❤️`).then(() => msg.react('💀'));
+            const filter = (reaction, user) => {
+                return [`❤️`, '💀'].includes(reaction.emoji.name);
+            };
+        }
 
             const collector = msg.createReactionCollector(filter, {time: 10000});
             collector.on('collect', (reaction, reactionCollector) => {
