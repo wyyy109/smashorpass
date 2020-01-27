@@ -52,15 +52,15 @@ bot.on('message', function(message){
             return [`❤️`, '💀'].includes(reaction.emoji.name);
             };
 
-            const collector = msg.createReactionCollector(filter, {time: 10000});
-            collector.on('collect', (reaction, reactionCollector) => {
+            const collector2 = msg.createReactionCollector(filter, {time: 10000});
+            collector2.on('collect', (reaction, reactionCollector) => {
               if (reaction.emoji.name === `❤️`) {
                 heartCount+=1
               } else if (reaction.emoji.name === `💀`) {
                 skullCount+=1
                 }
             });
-            collector.on('end', (reaction, reactionCollector) => {
+            collector2.on('end', (reaction, reactionCollector) => {
               if (heartCount > skullCount){
                 message.channel.send("SMASH");
               }
