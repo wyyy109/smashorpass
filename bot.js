@@ -5,7 +5,7 @@ bot.on('message', function(message){
     var heartCount = 0;
     var skullCount = 0;
 
-    if(message.content.toLowerCase().startsWith('!vote')) {
+    if(message.content.toLowerCase().startsWith('smash or pass:')) {
         var toSmash = message.content.slice(14);
         toSmash.trim();
         message.channel.send("The vote begins! \n**$toSmash**: smash or pass? Select :heart: to smash, :skull: to pass.").then(msg => {
