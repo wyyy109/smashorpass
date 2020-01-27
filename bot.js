@@ -15,7 +15,7 @@ bot.on('message', function(message){
        toSmash = toSmashTemp.trim();
       }
 
-      if (!!toSmash){
+      if (toSmash.length() > 0){
       message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
@@ -44,7 +44,7 @@ bot.on('message', function(message){
             });
         })
       }
-      else {
+      if (toSmash.length() = 0) {
       message.channel.send("Smash or pass? \nSelect :heart: to smash, :skull: to pass.")
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
