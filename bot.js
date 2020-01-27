@@ -31,13 +31,13 @@ bot.on('message', function(message){
                     };
                 
                     if (heartCount > skullCount){
-                        message.channel.send("SMASH" + " " + heartCount + " " + skullCount);
+                        message.channel.send(`Smash {$toSmash} by a vote of {$heartCount} to {$skullCount}.`);
                     }
                     else if (heartCount < skullCount){
-                        message.channel.send("PASS"+ " " + heartCount + " " + skullCount);
+                        message.channel.send('Pass on {$toSmash} by a vote of {$skullCount} to {$heartCount}.');
                     }
                     else {
-                        message.channel.send("TIE"+ " " + heartCount + " " + skullCount);
+                        message.channel.send(`Inconclusive whether to smash {$toSmash}.`);
                     }
                     
                 })
