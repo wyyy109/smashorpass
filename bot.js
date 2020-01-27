@@ -22,6 +22,7 @@ bot.on('message', function(message){
                 })
                 .then(message.awaitReactions(filter, {time: 5400})
                 .then(collected => {
+                    message.channel.send(collected.length);
                     for (var i = 0; i < collected.length; i++){
                         if (collected[i].emoji.name === "❤️")
                         {heartCount++;}
