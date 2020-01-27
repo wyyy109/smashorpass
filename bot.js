@@ -11,7 +11,9 @@ bot.on('message', function(message){
       if (toSmashTemp.charAt(0) === ":"){
         toSmash = toSmashTemp.slice(1).trim();
       }
+      else {
       toSmash = toSmashTemp.trim();
+      }
 
       if (toSmash !== ""){
       message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
@@ -43,7 +45,7 @@ bot.on('message', function(message){
         })
       }
       else {
-      message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
+      message.channel.send(`Smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
           const filter = (reaction, user) => {
