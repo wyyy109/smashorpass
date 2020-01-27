@@ -6,12 +6,11 @@ const filter = (reaction, user) => {
 
 bot.on('message', function(message){
     if(message.content.toLowerCase().startsWith('smash or pass:'))
-    var toSmash = message.content.slice(14).trim();
     {
     var heartCount = 0;
     var skullCount = 0;
         message.channel.send(
-            `**{$toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass. Vote ends in X time.`)
+            "The vote begins! \n**Name**: smash or pass? Select :heart: to smash, :skull: to pass.")
                 .then(async function (message){
                     try {
                     await message.react("❤️")
@@ -31,13 +30,13 @@ bot.on('message', function(message){
                     };
                 
                     if (heartCount > skullCount){
-                        message.channel.send(`Smash {$toSmash} by a vote of {$heartCount} to {$skullCount}.`);
+                        message.channel.send("SMASH" + " " + heartCount + " " + skullCount);
                     }
                     else if (heartCount < skullCount){
-                        message.channel.send('Pass on {$toSmash} by a vote of {$skullCount} to {$heartCount}.');
+                        message.channel.send("PASS"+ " " + heartCount + " " + skullCount);
                     }
                     else {
-                        message.channel.send(`Inconclusive whether to smash {$toSmash}.`);
+                        message.channel.send("TIE"+ " " + heartCount + " " + skullCount);
                     }
                     
                 })
