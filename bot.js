@@ -1,9 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const filter = (reaction, user) => {
-    return ["❤️","💀"].includes(reaction.emoji.name) && user.id === message.author.id };
-
 bot.on('message', function(message){
     if(message.content.toLowerCase().startsWith('smash or pass:'))
     {
@@ -20,13 +17,15 @@ bot.on('message', function(message){
                     console.error('One of the emojis failed to react.');
                     }
                 })
-                .then(message.awaitReactions(filter, {time: 5400})
+        const filter = (reaction, user) => {
+        return ["❤️","💀"].includes(reaction.emoji.name) && user.id === message.author.id };
+                
+                message.awaitReactions(filter, {time: 5400})
                 .then(collected => {
-                    const emojiList = collected;
-                    for (var i = 0; i < emojiList.length; i++){
-                        if (emojiList[i].emoji.name === "❤️")
+                    for (var i = 0; i < collected.length; i++){
+                        if (collected[i].emoji.name === "❤️")
                         {heartCount++;}
-                        else if (emojiList[i].emoji.name === "💀")
+                        else if (collected[i].emoji.name === "💀")
                         {skullCount++;}
                     };
                 
@@ -41,7 +40,6 @@ bot.on('message', function(message){
                     }
                     
                 })
-                )
     }
 });
 
