@@ -5,7 +5,7 @@ bot.on('message', function(message){
     var heartCount = 0;
     var skullCount = 0;
 
-    if(message.content.toLowerCase().startsWith('smash or pass')) {
+    if(message.content.toLowerCase().startsWith('smash or pass:')) {
       var toSmashTemp = message.content.slice(13);
       var toSmash = "";
       if (toSmashTemp.charAt(0) === ":"){
@@ -15,7 +15,7 @@ bot.on('message', function(message){
        toSmash = toSmashTemp.trim();
       }
 
-      if (Boolean(toSmash)){
+      if (toSmash === ""){
       message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
@@ -45,7 +45,7 @@ bot.on('message', function(message){
         })
       }
       else {
-      message.channel.send(`Smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
+      message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
           const filter = (reaction, user) => {
