@@ -16,14 +16,14 @@ bot.on('message', function(message){
       }
 
       if (toSmash.length > 0){
-      message.channel.send(`**${toSmash}**: smash or pass? \nSelect :heart: to smash, :skull: to pass.`)
+      message.channel.send(`**${toSmash}**: smash or pass? Vote now! Results will be tallied in five minutes. \nSelect :heart: to smash, :skull: to pass.`)
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
           const filter = (reaction, user) => {
             return [`❤️`, '💀'].includes(reaction.emoji.name);
             };
 
-            const collector = msg.createReactionCollector(filter, {time: 10000});
+            const collector = msg.createReactionCollector(filter, {time: 300000});
             collector.on('collect', (reaction, reactionCollector) => {
               if (reaction.emoji.name === `❤️`) {
                 heartCount+=1
@@ -45,14 +45,14 @@ bot.on('message', function(message){
         })
       }
       else {
-      message.channel.send("Will you smash or pass? \nSelect :heart: to smash, :skull: to pass.")
+      message.channel.send("Will you smash or pass? Vote now! Results will be tallied in five minutes. \nSelect :heart: to smash, :skull: to pass.")
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
           const filter = (reaction, user) => {
             return [`❤️`, '💀'].includes(reaction.emoji.name);
             };
 
-            const collector2 = msg.createReactionCollector(filter, {time: 10000});
+            const collector2 = msg.createReactionCollector(filter, {time: 300000});
             collector2.on('collect', (reaction, reactionCollector) => {
               if (reaction.emoji.name === `❤️`) {
                 heartCount+=1
