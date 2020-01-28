@@ -33,13 +33,13 @@ bot.on('message', function(message){
             });
             collector.on('end', (reaction, reactionCollector) => {
               if (heartCount > skullCount){
-                message.channel.send("SMASH");
+                message.channel.send(`OH YEAH, totally smash **${toSmash}**! :partying: :smirk: :stuck_out_tongue_winking_eye:`);
               }
               else if (heartCount < skullCount){
-                message.channel.send("Pass...");
+                message.channel.send(`Sorry, but we're gonna have to pass on **${toSmash}**. :pensive:`);
               }
               else {
-                message.channel.send("Inconclusive.");
+                message.channel.send(`Hmm... looks like a tie. Inconclusive whether to smash or pass **${toSmash}**. :thinking:`);
               }
             });
         })
@@ -62,13 +62,13 @@ bot.on('message', function(message){
             });
             collector2.on('end', (reaction, reactionCollector) => {
               if (heartCount > skullCount){
-                message.channel.send("SMASH");
+                message.channel.send("OH YEAH, totally smash!!! :partying: :smirk: :stuck_out_tongue_winking_eye:");
               }
               else if (heartCount < skullCount){
-                message.channel.send("Pass...");
+                message.channel.send("Sorry, but we're gonna have to pass on this one. Better luck next time.... :pensive:");
               }
               else {
-                message.channel.send("Inconclusive.");
+                message.channel.send("Hmm... looks like a tie. Inconclusive whether to smash or pass. Maybe try again? :thinking:");
               }
             });
         })
