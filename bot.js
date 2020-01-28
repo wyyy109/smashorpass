@@ -68,7 +68,7 @@ bot.on('message', function(message){
                 message.channel.send("Sorry, but we're gonna have to pass on this one. Better luck next time.... :pensive:");
               }
               else {
-                message.channel.send("Hmm... looks like a tie. Inconclusive whether to smash or pass. Maybe try again? :thinking:");
+                message.channel.send("Hmm... looks like a tie. Maybe try again? :thinking:");
               }
             });
         })
