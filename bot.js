@@ -38,7 +38,7 @@ bot.on('message', function(message){
     else if(message.content.toLowerCase().startsWith('smash or pass:')) {
       var toSmash = message.content.slice(13).trim();
         
-      if (toSmash.length() > 0){
+      if (toSmash.length > 0){
       message.channel.send(`**${toSmash}**: smash or pass? Vote now! Results will be tallied in five minutes. \nSelect :heart: to smash, :skull: to pass.`)
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
