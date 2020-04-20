@@ -11,11 +11,11 @@ bot.on('message', function(message){
       if (toSmashTemp.charAt(0) === ":"){
         toSmash = toSmashTemp.slice(1).trim();
       }
-      else {
+/*      else {
        toSmash = toSmashTemp.trim();
       }
-
-      if (toSmash.length > 0){
+*/
+      if (toSmash === true){
       message.channel.send(`**${toSmash}**: smash or pass? Vote now! Results will be tallied in five minutes. \nSelect :heart: to smash, :skull: to pass.`)
       .then(msg => {
         msg.react(`❤️`).then(() => msg.react('💀'));
